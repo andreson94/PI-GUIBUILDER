@@ -39,7 +39,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         lblIdade = new javax.swing.JLabel();
         txtIdade = new javax.swing.JTextField();
         lblSexo = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        cbSexo = new javax.swing.JComboBox<>();
         lblRG = new javax.swing.JLabel();
         txtRG = new javax.swing.JTextField();
         lblCpf = new javax.swing.JLabel();
@@ -79,10 +79,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         lblSexo.setText("Sexo:");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "Feminino", "Masculino", "Outro" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        cbSexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "Feminino", "Masculino", "Outro" }));
+        cbSexo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                cbSexoActionPerformed(evt);
             }
         });
 
@@ -125,7 +125,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(txtCPF)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.Alignment.LEADING, 0, 254, Short.MAX_VALUE)
+                    .addComponent(cbSexo, javax.swing.GroupLayout.Alignment.LEADING, 0, 254, Short.MAX_VALUE)
                     .addComponent(txtSobrenome, javax.swing.GroupLayout.Alignment.LEADING))
                 .addContainerGap())
         );
@@ -143,7 +143,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                     .addComponent(lblIdade)
                     .addComponent(txtIdade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblSexo)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cbSexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblRG)
@@ -199,25 +199,25 @@ public class TelaPrincipal extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtEmail))
                     .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(34, 34, 34)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(lblPermitirContato, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                                .addGap(34, 34, 34)
                                 .addComponent(rbSim)
                                 .addGap(18, 18, 18)
-                                .addComponent(rbNao)))
+                                .addComponent(rbNao))
+                            .addComponent(lblPermitirContato, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(56, 56, 56)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblPreferencaContato, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(cbTel)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(cbCel)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(cbEmail)))
-                        .addGap(0, 82, Short.MAX_VALUE))
+                                .addComponent(cbEmail))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(43, 43, 43)
+                                .addComponent(lblPreferencaContato, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(lblTel, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -306,9 +306,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNomeActionPerformed
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void cbSexoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbSexoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    }//GEN-LAST:event_cbSexoActionPerformed
 
     private void rbSimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbSimActionPerformed
         // TODO add your handling code here:
@@ -320,7 +320,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
         JOptionPane.showMessageDialog(this,"Nome: "+txtNome.getText()+"\nSobrenome: "
-                +txtSobrenome.getText()+"\nIdade:"+txtIdade+"\nSexo:"+lblSexo);
+                +txtSobrenome.getText()+"\nIdade:"+txtIdade.getText()+"\nSexo:"+cbSexo.getAction()+"\nRG:"+txtRG.getText()+
+                "\nCPF:"+txtCPF.getText()+"\nTelefone:"+txtTel.getText()+"\nCelular:"+txtCelular.getText()+"\nEmail:"+txtEmail.getText()+
+                "\nPermite contato?"+rbSim.isSelected()+rbNao.isSelected()+"\nPreferencia de Contato:"+cbTel.isSelected()+cbCel.isSelected()+cbEmail.isSelected());
     }//GEN-LAST:event_btnSalvarActionPerformed
 
     /**
@@ -364,8 +366,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JCheckBox cbCel;
     private javax.swing.JCheckBox cbEmail;
+    private javax.swing.JComboBox<String> cbSexo;
     private javax.swing.JCheckBox cbTel;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel lblCel;
