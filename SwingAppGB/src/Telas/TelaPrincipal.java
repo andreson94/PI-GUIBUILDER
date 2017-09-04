@@ -38,7 +38,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         txtSobrenome = new javax.swing.JTextField();
         lblIdade = new javax.swing.JLabel();
         txtIdade = new javax.swing.JTextField();
-        lblGenero = new javax.swing.JLabel();
+        lblSexo = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
         lblRG = new javax.swing.JLabel();
         txtRG = new javax.swing.JTextField();
@@ -77,7 +77,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         lblIdade.setText("Idade:");
 
-        lblGenero.setText("Gênero:");
+        lblSexo.setText("Sexo:");
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "Feminino", "Masculino", "Outro" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
@@ -102,22 +102,30 @@ public class TelaPrincipal extends javax.swing.JFrame {
                         .addGap(24, 24, 24)
                         .addComponent(txtRG))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(lblNome, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblNome)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(lblIdade)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(txtIdade)))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblSobrenome, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblGenero, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(18, 18, Short.MAX_VALUE)
+                        .addComponent(lblSexo)
+                        .addGap(8, 8, 8))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(52, 52, 52)
+                                .addComponent(lblCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(lblSobrenome)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(txtCPF)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.Alignment.LEADING, 0, 254, Short.MAX_VALUE)
                     .addComponent(txtSobrenome, javax.swing.GroupLayout.Alignment.LEADING))
                 .addContainerGap())
         );
@@ -134,7 +142,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblIdade)
                     .addComponent(txtIdade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblGenero)
+                    .addComponent(lblSexo)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -186,20 +194,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblEmail)
-                            .addComponent(lblTel))
+                        .addGap(71, 71, 71)
+                        .addComponent(lblEmail)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(8, 8, 8)
-                                .addComponent(txtTel, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(16, 16, 16)
-                                .addComponent(lblCel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtCelular))
-                            .addComponent(txtEmail)))
+                        .addComponent(txtEmail))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
@@ -219,7 +217,16 @@ public class TelaPrincipal extends javax.swing.JFrame {
                                 .addComponent(cbCel)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(cbEmail)))
-                        .addGap(0, 65, Short.MAX_VALUE)))
+                        .addGap(0, 82, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(lblTel, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtTel, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(16, 16, 16)
+                        .addComponent(lblCel, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtCelular)))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -289,7 +296,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSalvar)
                     .addComponent(btnCancelar))
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -313,7 +320,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
         JOptionPane.showMessageDialog(this,"Nome: "+txtNome.getText()+"\nSobrenome: "
-                +txtSobrenome.getText()+"\nIdade:"+txtIdade+"\nSexo:"+c);
+                +txtSobrenome.getText()+"\nIdade:"+txtIdade+"\nSexo:"+lblSexo);
     }//GEN-LAST:event_btnSalvarActionPerformed
 
     /**
@@ -364,12 +371,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel lblCel;
     private javax.swing.JLabel lblCpf;
     private javax.swing.JLabel lblEmail;
-    private javax.swing.JLabel lblGenero;
     private javax.swing.JLabel lblIdade;
     private javax.swing.JLabel lblNome;
     private javax.swing.JLabel lblPermitirContato;
     private javax.swing.JLabel lblPreferencaContato;
     private javax.swing.JLabel lblRG;
+    private javax.swing.JLabel lblSexo;
     private javax.swing.JLabel lblSobrenome;
     private javax.swing.JLabel lblTel;
     private javax.swing.JRadioButton rbNao;
