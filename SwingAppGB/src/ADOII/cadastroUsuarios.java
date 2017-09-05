@@ -1,8 +1,12 @@
 package ADOII;
 
 import java.awt.Dimension;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
@@ -15,7 +19,7 @@ public class cadastroUsuarios {
     public static void main(String[] args) {
         Runnable t= new Runnable() {
             public void run() {
-                
+                criarGUI();
             }
         };
         SwingUtilities.invokeLater(t);
@@ -31,11 +35,44 @@ public class cadastroUsuarios {
         JPanel panel = new JPanel();
         frame.getContentPane().add(panel);
         
-        JLabel lblnome = new JLabel("Nome: ");
-        panel.add(lblnome);
+        JLabel lblNome = new JLabel("Nome: ");
+        panel.add(lblNome);
         
-        JTextField txtnome = new JTextField(10);
-        panel.add(txtnome);
+        final JTextField txtNome = new JTextField(10);
+        panel.add(txtNome);
+        
+        JLabel lblEndereco = new JLabel("Endereço: ");
+        panel.add(lblEndereco);
+        
+        final JTextField txtEndereco = new JTextField(15);
+        panel.add(txtEndereco);
+        
+        JLabel lblTel = new JLabel("Telefone: ");
+        panel.add(lblTel);
+        
+        final JTextField txtTel = new JTextField(10);
+        panel.add(txtTel);
+        
+        JButton btnSalvar = new JButton("Salvar");
+        panel.add(btnSalvar);
+
+        ActionListener listener = new ActionListener() {
+            public void actionPerformed(ActionEvent ae) {
+                JOptionPane.showMessageDialog(panel,"Nome:  "+txtNome.getText()+"\nEnd: "+txtEndereco.getText()+"\nTel: "+txtTel.getText());
+            }
+        };
+            btnSalvar.addActionListener(listener);
+
+        JButton btnMostrar = new JButton("Mostrar");
+        panel.add(btnMostrar);
+         
+        ActionListener listener = new ActionListener() {
+            public void actionPerformed(ActionEvent ae) {
+                JOptionPane.showMessageDialog(panel,"Nome:  "+txtNome.getText()+"\nEnd: "+txtEndereco.getText()+"\nTel: "+txtTel.getText());
+            }
+        };
+            btnMostrar.addActionListener(listener);
+        
         
         
         
