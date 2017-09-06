@@ -54,25 +54,46 @@ public class jogoAdvinha {
                
                 Random aleatorio = new Random();
                 int random = aleatorio.nextInt(10);
-                int tentativas=5;
-                int sair =0;
+                int tentativas=0;
+                int sair;
+                int numero=0;
                 
-                while(tentativas > 0){
+                numero = Integer.parseInt(txtNumero.getText());
+                
+                while(tentativas < 5){
                     
-                if (txtNumero.equals(random)){
+                if (numero==random){
                 JOptionPane.showMessageDialog(frame,"Numero: "+txtNumero.getText()+"\n Acertou");
+                sair=JOptionPane.showConfirmDialog(frame,"Deseja jogar novamente? "," ",JOptionPane.YES_NO_OPTION);
+                    
+                    if(sair==JOptionPane.NO_OPTION){
+                        System.exit(0);
                 }else{
-                    tentativas--;
-                 JOptionPane.showMessageDialog(frame," ERROOOU!"+"\nTentativas restatntes: "+tentativas);
+                        tentativas=0;
+                    }
+                }else{
+                        tentativas++;
+                    numero = Integer.parseInt(JOptionPane.showInputDialog(panel,"Digite outro numero: "));
+                    
                 }
-            }
-            System.exit(sair);
-
+                
+                if(tentativas==5){
+                    JOptionPane.showMessageDialog(panel,"Numero: "+random );
+                    sair=JOptionPane.showConfirmDialog(frame,"Deseja jogar novamente? "," ",JOptionPane.YES_NO_OPTION);
+                    
+                    if(sair==JOptionPane.NO_OPTION){
+                        System.exit(0);
+                }else{
+                        tentativas=0;
+                    }
+                }
+                }
             }
         };
         btnVerificar.addActionListener(listener);
         
         frame.pack();
         frame.setVisible(true);
+        
     }
 }
