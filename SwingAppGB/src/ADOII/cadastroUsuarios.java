@@ -1,6 +1,8 @@
 package ADOII;
 
 import java.awt.Dimension;
+import java.awt.FlowLayout;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
@@ -33,6 +35,7 @@ public class cadastroUsuarios {
         frame.setTitle("Cadastro de Dados dos Usúarios");
         
         JPanel panel = new JPanel();
+        panel.setLayout(new FlowLayout(FlowLayout.RIGHT));
         frame.getContentPane().add(panel);
         
         JLabel lblNome = new JLabel("Nome: ");
@@ -56,22 +59,22 @@ public class cadastroUsuarios {
         JButton btnSalvar = new JButton("Salvar");
         panel.add(btnSalvar);
 
-        ActionListener listener = new ActionListener() {
+        ActionListener listenerSalvar = new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
-                JOptionPane.showMessageDialog(panel,"Nome:  "+txtNome.getText()+"\nEnd: "+txtEndereco.getText()+"\nTel: "+txtTel.getText());
+                JOptionPane.showMessageDialog(panel,"Salvo");
             }
         };
-            btnSalvar.addActionListener(listener);
+            btnSalvar.addActionListener(listenerSalvar);
 
         JButton btnMostrar = new JButton("Mostrar");
         panel.add(btnMostrar);
          
-        ActionListener listener = new ActionListener() {
+        ActionListener listenerMostrar = new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
                 JOptionPane.showMessageDialog(panel,"Nome:  "+txtNome.getText()+"\nEnd: "+txtEndereco.getText()+"\nTel: "+txtTel.getText());
             }
         };
-            btnMostrar.addActionListener(listener);
+            btnMostrar.addActionListener(listenerMostrar);
         
         
         
