@@ -31,7 +31,7 @@ public class cadastroJogos {
         Dimension d = new Dimension(400,600);
         frame.setMinimumSize(d);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setTitle("Cadastro de Dados dos Usúarios");
+        frame.setTitle("Cadastro de jogos");
         
         JPanel panel = new JPanel();
         panel.setLayout(new FlowLayout(FlowLayout.RIGHT));
@@ -43,17 +43,6 @@ public class cadastroJogos {
         final JTextField txtNome = new JTextField(10);
         panel.add(txtNome);
         
-        JLabel lblEndereco = new JLabel("Endereço: ");
-        panel.add(lblEndereco);
-        
-        final JTextField txtEndereco = new JTextField(15);
-        panel.add(txtEndereco);
-        
-        JLabel lblTel = new JLabel("Telefone: ");
-        panel.add(lblTel);
-        
-        final JTextField txtTel = new JTextField(10);
-        panel.add(txtTel);
         
         JButton btnSalvar = new JButton("Salvar");
         panel.add(btnSalvar);
@@ -70,7 +59,7 @@ public class cadastroJogos {
          
         ActionListener listenerMostrar = new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
-                JOptionPane.showMessageDialog(panel,"Nome:  "+txtNome.getText()+"\nEnd: "+txtEndereco.getText()+"\nTel: "+txtTel.getText());
+                JOptionPane.showMessageDialog(panel,"Nome:  "+txtNome.getText());
             }
         };
             btnMostrar.addActionListener(listenerMostrar);
