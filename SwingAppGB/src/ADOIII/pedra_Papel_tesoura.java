@@ -5,6 +5,8 @@
  */
 package ADOIII;
 
+import java.util.Random;
+
 /**
  *
  * @author andreson.csilva
@@ -28,27 +30,127 @@ public class pedra_Papel_tesoura extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        cbPPT = new javax.swing.JComboBox<>();
+        lblUsuario = new javax.swing.JLabel();
+        lblPC = new javax.swing.JLabel();
+        lblTelaResultado = new javax.swing.JLabel();
+        btnJogar = new javax.swing.JButton();
+        lblVitorias = new javax.swing.JLabel();
+        lblContV = new javax.swing.JLabel();
+        lblDrerrotas = new javax.swing.JLabel();
+        lblContD = new javax.swing.JLabel();
+        lblPPT = new javax.swing.JLabel();
+        lblPpt = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Pedra,Papel ou Teroura");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel1.setBackground(new java.awt.Color(204, 255, 255));
+
+        cbPPT.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        cbPPT.setForeground(new java.awt.Color(0, 51, 204));
+        cbPPT.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "Pedra", "Papel", "Tesoura" }));
+
+        lblUsuario.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblUsuario.setText("Usuario");
+
+        lblPC.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblPC.setText("Computador");
+
+        lblTelaResultado.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        lblTelaResultado.setForeground(new java.awt.Color(255, 0, 0));
+
+        btnJogar.setBackground(new java.awt.Color(204, 0, 0));
+        btnJogar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnJogar.setForeground(new java.awt.Color(255, 255, 255));
+        btnJogar.setText("Jogar");
+        btnJogar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnJogarActionPerformed(evt);
+            }
+        });
+
+        lblVitorias.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        lblVitorias.setForeground(new java.awt.Color(0, 153, 0));
+        lblVitorias.setText("Vitorias");
+
+        lblContV.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblContV.setForeground(new java.awt.Color(0, 153, 0));
+        lblContV.setText("0");
+
+        lblDrerrotas.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        lblDrerrotas.setForeground(new java.awt.Color(204, 0, 0));
+        lblDrerrotas.setText("Derrotas");
+
+        lblContD.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblContD.setForeground(new java.awt.Color(153, 0, 0));
+        lblContD.setText("0");
+
+        lblPPT.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+
+        lblPpt.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblPpt.setText("?");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(166, 166, 166)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(178, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(44, 44, 44)
+                        .addComponent(lblTelaResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnJogar)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(lblDrerrotas, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(lblContD))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblUsuario)
+                            .addComponent(lblPC))
+                        .addGap(58, 58, 58)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(lblPPT, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lblPpt, javax.swing.GroupLayout.DEFAULT_SIZE, 61, Short.MAX_VALUE)
+                                .addGap(28, 28, 28)
+                                .addComponent(lblVitorias)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(lblContV, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(cbPPT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(104, 104, 104)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(176, Short.MAX_VALUE))
+                .addGap(29, 29, 29)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblUsuario)
+                    .addComponent(cbPPT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lblTelaResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblContV)
+                            .addComponent(lblVitorias)
+                            .addComponent(lblPC)
+                            .addComponent(lblPPT)
+                            .addComponent(lblPpt, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblDrerrotas)
+                            .addComponent(lblContD))
+                        .addGap(31, 31, 31)
+                        .addComponent(btnJogar)))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -59,11 +161,32 @@ public class pedra_Papel_tesoura extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnJogarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJogarActionPerformed
+        Random random=new Random();
+        int aleatorio=random.nextInt(3);
+
+        switch(aleatorio){
+            case 1:
+                
+            }
+            break;
+            case 2:
+            int papel=Integer.parseInt("Papel");
+            break;
+            case 3:
+            int tesoura=Integer.parseInt("tesoura");
+            break;
+            default:
+            System.out.println("erro");
+        }
+
+    }//GEN-LAST:event_btnJogarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -101,7 +224,17 @@ public class pedra_Papel_tesoura extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JButton btnJogar;
+    private javax.swing.JComboBox<String> cbPPT;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel lblContD;
+    private javax.swing.JLabel lblContV;
+    private javax.swing.JLabel lblDrerrotas;
+    private javax.swing.JLabel lblPC;
+    private javax.swing.JLabel lblPPT;
+    private javax.swing.JLabel lblPpt;
+    private javax.swing.JLabel lblTelaResultado;
+    private javax.swing.JLabel lblUsuario;
+    private javax.swing.JLabel lblVitorias;
     // End of variables declaration//GEN-END:variables
 }
