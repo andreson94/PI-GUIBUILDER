@@ -372,12 +372,14 @@ public class CadastroUsuarios extends javax.swing.JFrame {
         if(!txtNome.getText().equals(null)&&txtSobrenome.getText().equals(null)
                 &&txtIdade.getText().equals(null)&&txtCPF.getText().equals(null)&&txtRG.getText().equals(null)
                 &&cbSexo.getSelectedItem().equals(null)){
-        
-            valida =1;
-        jLabel1.setText("Salvo com Sucesso");
-        }else{
-            valida=2;
+           
+             valida=2;
             jLabel1.setText("Preencha os campos obrigatorios");
+            
+        }else{
+             valida =1;
+            jLabel1.setText("Salvo com Sucesso");
+       
         }
     }//GEN-LAST:event_btnSalvarActionPerformed
 
@@ -394,7 +396,7 @@ public class CadastroUsuarios extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(this,"Nome: "+txtNome.getText()+"\nSobrenome: "
                 +txtSobrenome.getText()+"\nIdade:"+txtIdade.getText()+
                 "\nSexo:"+cbSexo.getSelectedItem()+"\nRG:"+txtRG.getText()+
-                "\nCPF:"+txtCPF.getText()+"Rua: "+txtRua.getText()+"Nº: "+txtNum.getText()
+                "\nCPF:"+txtCPF.getText()+"\nRua: "+txtRua.getText()+"Nº: "+txtNum.getText()
                 +"\nBairro: "+txtBairro.getText()+"\nCidade: "+txtCidade.getText()+
                 "\nEstado: "+txtEstado.getText()+"\nPais: "+txtPais.getText()+"\nTelefone:"+txtTel.getText()+
                 "\nCelular:"+txtCelular.getText()+"\nEmail:"+txtEmail.getText());
