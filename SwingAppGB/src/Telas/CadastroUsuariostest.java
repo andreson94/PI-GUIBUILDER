@@ -5,19 +5,16 @@
  */
 package Telas;
 
-import java.awt.TextField;
-import javax.swing.JOptionPane;
-
 /**
  *
- * @author andreson.csilva
+ * @author Andreson
  */
-public class TelaPrincipal extends javax.swing.JFrame {
+public class CadastroUsuariostest extends javax.swing.JFrame {
 
     /**
-     * Creates new form TelaPrincipal
+     * Creates new form CadastroUsuarios
      */
-    public TelaPrincipal() {
+    public CadastroUsuariostest() {
         initComponents();
     }
 
@@ -30,7 +27,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         lblNome = new javax.swing.JLabel();
         txtNome = new javax.swing.JTextField();
@@ -58,8 +54,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         cbTel = new javax.swing.JCheckBox();
         cbCel = new javax.swing.JCheckBox();
         cbEmail = new javax.swing.JCheckBox();
-        btnSalvar = new javax.swing.JButton();
-        btnCancelar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -125,7 +119,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(txtCPF)
-                    .addComponent(cbSexo, javax.swing.GroupLayout.Alignment.LEADING, 0, 254, Short.MAX_VALUE)
+                    .addComponent(cbSexo, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(txtSobrenome, javax.swing.GroupLayout.Alignment.LEADING))
                 .addContainerGap())
         );
@@ -161,7 +155,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         lblCel.setText("Celular");
 
-        buttonGroup1.add(rbSim);
         rbSim.setText("Sim");
         rbSim.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -169,7 +162,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        buttonGroup1.add(rbNao);
         rbNao.setText("Não");
 
         lblPermitirContato.setText("Permite Contato");
@@ -256,47 +248,31 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addGap(25, 25, 25))
         );
 
-        btnSalvar.setText("Salvar");
-        btnSalvar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSalvarActionPerformed(evt);
-            }
-        });
-
-        btnCancelar.setText("Cancelar");
-        btnCancelar.setToolTipText("");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnCancelar)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnSalvar)))
-                .addContainerGap())
+            .addGap(0, 563, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(3, 3, 3)
+                            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addContainerGap()))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(11, 11, 11)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnSalvar)
-                    .addComponent(btnCancelar))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGap(0, 447, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(11, 11, 11)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
         pack();
@@ -318,13 +294,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_cbEmailActionPerformed
 
-    private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
-        JOptionPane.showMessageDialog(this,"Nome: "+txtNome.getText()+"\nSobrenome: "
-                +txtSobrenome.getText()+"\nIdade:"+txtIdade.getText()+"\nSexo:"+cbSexo.getAction()+"\nRG:"+txtRG.getText()+
-                "\nCPF:"+txtCPF.getText()+"\nTelefone:"+txtTel.getText()+"\nCelular:"+txtCelular.getText()+"\nEmail:"+txtEmail.getText()+
-                "\nPermite contato?"+rbSim.isSelected()+rbNao.isSelected()+"\nPreferencia de Contato:"+cbTel.isSelected()+cbCel.isSelected()+cbEmail.isSelected());
-    }//GEN-LAST:event_btnSalvarActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -342,28 +311,26 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroUsuariostest.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroUsuariostest.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroUsuariostest.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroUsuariostest.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaPrincipal().setVisible(true);
+                new CadastroUsuariostest().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCancelar;
-    private javax.swing.JButton btnSalvar;
-    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JCheckBox cbCel;
     private javax.swing.JCheckBox cbEmail;
     private javax.swing.JComboBox<String> cbSexo;
